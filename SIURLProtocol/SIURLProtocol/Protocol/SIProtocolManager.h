@@ -6,7 +6,7 @@
 //  Copyright © 2018年 Silence. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SIURLProtocol.h"
 
 @interface SIProtocolManager : NSObject
 

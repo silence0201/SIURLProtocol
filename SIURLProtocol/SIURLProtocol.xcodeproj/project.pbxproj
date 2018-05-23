@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64EF6B016F039A804F7D79FD /* libPods-SIURLProtocol.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1C6BAEFBFBCD03E6561E8E /* libPods-SIURLProtocol.a */; };
 		E8E0F34C20B45643001382B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E0F34B20B45643001382B7 /* AppDelegate.m */; };
 		E8E0F34F20B45643001382B7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E0F34E20B45643001382B7 /* ViewController.m */; };
 		E8E0F35220B45643001382B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8E0F35020B45643001382B7 /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B5C71B031098D8849A100ED /* Pods-SIURLProtocol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIURLProtocol.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SIURLProtocol/Pods-SIURLProtocol.debug.xcconfig"; sourceTree = "<group>"; };
+		78BC931C5D4BF1E415D63AFC /* Pods-SIURLProtocol.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SIURLProtocol.release.xcconfig"; path = "Pods/Target Support Files/Pods-SIURLProtocol/Pods-SIURLProtocol.release.xcconfig"; sourceTree = "<group>"; };
 		E8E0F34720B45643001382B7 /* SIURLProtocol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SIURLProtocol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E0F34A20B45643001382B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E8E0F34B20B45643001382B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		E8E0F36220B4568C001382B7 /* SIProtocolManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIProtocolManager.m; sourceTree = "<group>"; };
 		E8E0F36420B456C0001382B7 /* SIURLProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIURLProtocol.h; sourceTree = "<group>"; };
 		E8E0F36520B456C0001382B7 /* SIURLProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIURLProtocol.m; sourceTree = "<group>"; };
+		EA1C6BAEFBFBCD03E6561E8E /* libPods-SIURLProtocol.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SIURLProtocol.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64EF6B016F039A804F7D79FD /* libPods-SIURLProtocol.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CCC46F9A3A36EEE646369ACD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA1C6BAEFBFBCD03E6561E8E /* libPods-SIURLProtocol.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0373D9EB99DA52A0635F5FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B5C71B031098D8849A100ED /* Pods-SIURLProtocol.debug.xcconfig */,
+				78BC931C5D4BF1E415D63AFC /* Pods-SIURLProtocol.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E8E0F33E20B45643001382B7 = {
 			isa = PBXGroup;
 			children = (
 				E8E0F34920B45643001382B7 /* SIURLProtocol */,
 				E8E0F34820B45643001382B7 /* Products */,
+				D0373D9EB99DA52A0635F5FF /* Pods */,
+				CCC46F9A3A36EEE646369ACD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,9 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8E0F35D20B45644001382B7 /* Build configuration list for PBXNativeTarget "SIURLProtocol" */;
 			buildPhases = (
+				D8449D277603EBC8FD81EFB9 /* [CP] Check Pods Manifest.lock */,
 				E8E0F34320B45643001382B7 /* Sources */,
 				E8E0F34420B45643001382B7 /* Frameworks */,
 				E8E0F34520B45643001382B7 /* Resources */,
+				2A895D5A56C5C7B406AFEA98 /* [CP] Embed Pods Frameworks */,
+				74487886C334E68B3B192DFC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -153,6 +180,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A895D5A56C5C7B406AFEA98 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SIURLProtocol/Pods-SIURLProtocol-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74487886C334E68B3B192DFC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SIURLProtocol/Pods-SIURLProtocol-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8449D277603EBC8FD81EFB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SIURLProtocol-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E8E0F34320B45643001382B7 /* Sources */ = {
@@ -301,14 +379,12 @@
 		};
 		E8E0F35E20B45644001382B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B5C71B031098D8849A100ED /* Pods-SIURLProtocol.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SIURLProtocol/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.silence.SIURLProtocol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -317,14 +393,12 @@
 		};
 		E8E0F35F20B45644001382B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78BC931C5D4BF1E415D63AFC /* Pods-SIURLProtocol.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SIURLProtocol/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.silence.SIURLProtocol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

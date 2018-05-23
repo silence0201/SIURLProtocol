@@ -24,7 +24,7 @@
 @end
 
 @protocol SIURLProtocolDelegate<NSObject>
-- (void)handleWithNetWorkRequest:(SINetWorkModel *)netWorkRequest;
+- (void)handleWithNetWorkRequest:(SINetWorkModel *)netWorkModel;
 @end
 
 @interface SIURLProtocol : NSURLProtocol
