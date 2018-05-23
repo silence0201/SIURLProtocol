@@ -10,7 +10,9 @@
 #import "SIProtocolManager.h"
 #import <AFNetworking/AFNetworking.h>
 
-@interface ViewController ()<SIURLProtocolDelegate>
+@interface ViewController ()<SIURLProtocolDelegate,UIWebViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
@@ -21,6 +23,9 @@
     
     [[SIProtocolManager manager] setEnable:YES];
     [SIURLProtocol setDelegate:self];
+    
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.playcode.cc"]]];
+    self.webView.delegate = self;
     
     //Network Request
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://api.douban.com/v2/book/1220562"]];
@@ -40,8 +45,14 @@
 - (void)handleWithNetWorkRequest:(SINetWorkModel *)netWorkModel {
     NSLog(@"url:%@",netWorkModel.url);
     NSLog(@"method:%@",netWorkModel.method);
+    NSLog(@"HTTPHeader:%@",netWorkModel.requestBody);
     NSLog(@"MIMEType:%@",netWorkModel.mineType);
     NSLog(@"response:%@",[[NSString alloc]initWithData:netWorkModel.responseData encoding:NSUTF8StringEncoding]);
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSString *title = [self.webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    self.title = title;
 }
 
 @end
