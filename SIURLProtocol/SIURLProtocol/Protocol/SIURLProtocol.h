@@ -29,6 +29,6 @@
 
 @interface SIURLProtocol : NSURLProtocol
 
-@property (nonatomic,weak) id<SIURLProtocolDelegate> protocolDelegate;
++ (void)setDelegate:(id<SIURLProtocolDelegate>)delegate;
 
 @end

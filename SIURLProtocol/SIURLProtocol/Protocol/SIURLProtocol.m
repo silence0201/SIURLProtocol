@@ -34,7 +34,7 @@
 @end
 
 static NSString *const SIProtocolIdentifier = @"SIProtocolIdentifier";
-
+static id<SIURLProtocolDelegate> _delegate = nil;
 @interface SIURLProtocol() <NSURLSessionTaskDelegate,NSURLSessionDataDelegate>
 
 @property (nonatomic, strong) NSURLSessionDataTask *dataTask;
@@ -47,6 +47,10 @@ static NSString *const SIProtocolIdentifier = @"SIProtocolIdentifier";
 @end
 
 @implementation SIURLProtocol
+
++ (void)setDelegate:(id<SIURLProtocolDelegate>)delegate {
+    _delegate = delegate;
+}
 
 + (BOOL)canInitWithRequest:(NSURLRequest *)request {
     if (![request.URL.scheme isEqualToString:@"http"] && ![request.URL.scheme isEqualToString:@"https"]) {
@@ -100,8 +104,8 @@ static NSString *const SIProtocolIdentifier = @"SIProtocolIdentifier";
     model.totalDuration = [NSString stringWithFormat:@"%fs",[[NSDate date] timeIntervalSinceDate:self.startDate]];
     model.error = self.error;
     
-    if ([self.protocolDelegate respondsToSelector:@selector(handleWithNetWorkRequest:)]) {
-        [self.protocolDelegate handleWithNetWorkRequest:model];
+    if ([_delegate respondsToSelector:@selector(handleWithNetWorkRequest:)]) {
+        [_delegate handleWithNetWorkRequest:model];
     }
 }
 
