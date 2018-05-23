@@ -23,14 +23,14 @@
     [SIURLProtocol setDelegate:self];
     
     //Network Request
-    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://www.playcode.cc"]];
+    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"https://api.douban.com/v2/book/1220562"]];
     [urlRequest setHTTPMethod:@"GET"];
     [NSURLConnection sendAsynchronousRequest:urlRequest queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
         NSLog(@"返回的数据:%@",data);
     }];
     
     // Json Response
-    [[AFHTTPSessionManager manager] GET:@"http://www.playcode.cc/feed" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [[AFHTTPSessionManager manager] GET:@"https://api.douban.com/v2/loc/list" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"返回的数据:%@",responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
