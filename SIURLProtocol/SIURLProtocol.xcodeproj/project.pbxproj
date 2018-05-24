@@ -16,6 +16,7 @@
 		E8E0F35A20B45644001382B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E0F35920B45644001382B7 /* main.m */; };
 		E8E0F36320B4568C001382B7 /* SIProtocolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E0F36220B4568C001382B7 /* SIProtocolManager.m */; };
 		E8E0F36620B456C0001382B7 /* SIURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E0F36520B456C0001382B7 /* SIURLProtocol.m */; };
+		E8E0F36A20B6FC93001382B7 /* SIWebCacheProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E0F36920B6FC93001382B7 /* SIWebCacheProtocol.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		E8E0F36220B4568C001382B7 /* SIProtocolManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIProtocolManager.m; sourceTree = "<group>"; };
 		E8E0F36420B456C0001382B7 /* SIURLProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIURLProtocol.h; sourceTree = "<group>"; };
 		E8E0F36520B456C0001382B7 /* SIURLProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIURLProtocol.m; sourceTree = "<group>"; };
+		E8E0F36820B6FC93001382B7 /* SIWebCacheProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIWebCacheProtocol.h; sourceTree = "<group>"; };
+		E8E0F36920B6FC93001382B7 /* SIWebCacheProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIWebCacheProtocol.m; sourceTree = "<group>"; };
 		EA1C6BAEFBFBCD03E6561E8E /* libPods-SIURLProtocol.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SIURLProtocol.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,6 +91,7 @@
 		E8E0F34920B45643001382B7 /* SIURLProtocol */ = {
 			isa = PBXGroup;
 			children = (
+				E8E0F36720B6FC6D001382B7 /* WebCacheProtocol */,
 				E8E0F36020B45655001382B7 /* Protocol */,
 				E8E0F34A20B45643001382B7 /* AppDelegate.h */,
 				E8E0F34B20B45643001382B7 /* AppDelegate.m */,
@@ -111,6 +115,15 @@
 				E8E0F36520B456C0001382B7 /* SIURLProtocol.m */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E8E0F36720B6FC6D001382B7 /* WebCacheProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				E8E0F36820B6FC93001382B7 /* SIWebCacheProtocol.h */,
+				E8E0F36920B6FC93001382B7 /* SIWebCacheProtocol.m */,
+			);
+			path = WebCacheProtocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +255,7 @@
 				E8E0F35A20B45644001382B7 /* main.m in Sources */,
 				E8E0F34C20B45643001382B7 /* AppDelegate.m in Sources */,
 				E8E0F36320B4568C001382B7 /* SIProtocolManager.m in Sources */,
+				E8E0F36A20B6FC93001382B7 /* SIWebCacheProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +398,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SIURLProtocol/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.silence.SIURLProtocol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -398,7 +415,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SIURLProtocol/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.silence.SIURLProtocol;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
