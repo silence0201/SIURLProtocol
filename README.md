@@ -3,7 +3,7 @@ URLProtocol简单使用
 
 `NSURLProtocol`是iOS里面的`URL Loading System`的一部分，但是从它的名字来看，不像是一个对象，可是它偏偏是个对象,而且还是抽象对象（可是OC里面没有抽象这一说）。平常我们做网络相关的东西基本很少碰它，但是它的功能却强大得要死。
 
-* 可以拦截UIWebView，基于系统的NSUIConnection或者NSUISession进行封装的网络请求  
+* 可以拦截UIWebView，基于系统的NSURLConnection或者NSURLSession进行封装的网络请求  
 * 忽略网络请求，直接返回自定义的Response  
 * 修改request（请求地址，认证信息等等）  
 * 返回数据拦截  
